@@ -1,5 +1,9 @@
-for _, obj in pairs(workspace:GetDescendants()) do
-	if obj:IsA("Part") and obj.Name:lower():find("sell") then
-		print("Possível barraca de venda encontrada:", obj:GetFullName())
-	end
+local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+if hrp then
+    local pos = tostring(hrp.CFrame)
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "CFrame Atual";
+        Text = pos;
+        Duration = 10
+    })
 end
